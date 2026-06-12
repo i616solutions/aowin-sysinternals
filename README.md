@@ -1,16 +1,16 @@
-# AOWIN %module_name% Module Template
+# AOWIN Sysinternals Module
 
 A simple starter template for creating AOWIN PowerShell modules.
 
 ## Structure
 
-- `%module_name%/` - Module scripts and related files.
+- `aowin-sysinternals/` - Module scripts and related files.
 - `docs/` - Installation and usage documentation.
 
 ## Example
 
 ```powershell
 
-aowin %module_name% get-date
+aowin sysinternals get-date
 
 ```

@@ -1,4 +1,4 @@
-# Using `%module_name%`
+# Using `aowin-sysinternals`
 
 This document shows the basic command pattern for this template module.
 Update the examples as you add real commands.
@@ -8,7 +8,7 @@ Update the examples as you add real commands.
 AOWIN commands use the module name followed by the command name:
 
 ```powershell
-aowin %module_name% <command-name>
+aowin aowin-sysinternals <command-name>
 ```
 
 ## Example Command
@@ -16,19 +16,19 @@ aowin %module_name% <command-name>
 The template includes a simple `get-date.ps1` command.
 
 ```powershell
-aowin %module_name% get-date
+aowin aowin-sysinternals get-date
 ```
 
 This should print the current date and time.
 
 ## Adding Commands
 
-Add new PowerShell scripts to the `%module_name%` directory.
+Add new PowerShell scripts to the `aowin-sysinternals` directory.
 
 For example:
 
 ```text
-%module_name%/
+aowin-sysinternals/
   get-date.ps1
   example-command.ps1
 ```
@@ -36,5 +36,5 @@ For example:
 Then call the command through AOWIN:
 
 ```powershell
-aowin %module_name% example-command
+aowin aowin-sysinternals example-command
 ```
