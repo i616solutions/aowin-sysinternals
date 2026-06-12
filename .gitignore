@@ -1,0 +1,23 @@
+# PowerShell
+*.ps1xml
+*.psd1.backup
+*.psm1.backup
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Local configuration
+*.local
+*.local.*
+config.local.*
+
+# Editor folders
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
