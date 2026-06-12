@@ -3,6 +3,7 @@ function Install-SysinternalsSuite {
         [string]$Destination = "C:\Tools\Sysinternals",
         [switch]$Overwrite,
         [switch]$KeepZip
+        [switch]$NoInstall
     )
 
     $url = "https://download.sysinternals.com/files/SysinternalsSuite.zip"
@@ -22,15 +23,18 @@ function Install-SysinternalsSuite {
 
     Write-Host "Downloading Sysinternals Suite..."
     Invoke-WebRequest -Uri $url -OutFile $zipPath
+    Write-Host "Sysinternals Suite Downloaded to: $zipPath"
+    
+    if (-not $NoInstall) {
+        Write-Host "Extracting to $Destination..."
+        Expand-Archive -Path $zipPath -DestinationPath $Destination -Force
 
-    Write-Host "Extracting to $Destination..."
-    Expand-Archive -Path $zipPath -DestinationPath $Destination -Force
+        if (-not $KeepZip) {
+            Remove-Item $zipPath -Force
+        }
 
-    if (-not $KeepZip) {
-        Remove-Item $zipPath -Force
+        Write-Host "Sysinternals Suite installed to: $Destination"
     }
-
-    Write-Host "Sysinternals Suite installed to: $Destination"
 }
 
 Install-SysinternalsSuite -Destination "C:\Tools\Sysinternals" -Overwrite
